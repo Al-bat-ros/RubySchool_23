@@ -24,9 +24,10 @@ post '/visit' do
   @username = params[:user_name]
   @namber_phone = params[:namber_phone]
   @data_time = params[:data_time]
+  @color = params[:color]
 
   f = File.open './public/user.txt','a'
-  f.write "User:#{@username}, Phone:#{@namber_phone}, Data:#{@data_time}, Hairdresser:#{@list}. "
+  f.write "User:#{@username}, Phone:#{@namber_phone}, Data:#{@data_time}, Hairdresser:#{@list}, Color: #{@color}. "
   f.close
 
   erb 'Спасибо!! ждем вас'
